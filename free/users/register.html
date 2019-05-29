@@ -1,0 +1,93 @@
+<?php
+if(isset($_POST['btnRegister'])){
+	include '../models/register.php';
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<link rel="stylesheet" href="/vendor/css/bootstrap.css">
+<link rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+<link rel="stylesheet" href="/vendor/css/style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<!--Fontawesome CDN-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+<div class="d-flex justify-content-center h-100">
+<div class="card">
+	<div class="card-header">
+		<h3>Register</h3>
+		<div class="d-flex justify-content-end social_icon">
+			<span><i class="fab fa-facebook-square"></i></span>
+			<span><i class="fab fa-google-plus-square"></i></span>
+			<span><i class="fab fa-twitter-square"></i></span>
+		</div>
+	</div>
+	<div class="card-body">
+		<form action="" method="post">
+			<?php
+			if(isset($_GET['msg'])){
+				$message = "";
+				switch ($_GET['msg']) {
+					case 'success':
+						$message = "Successfully Registered.";
+					break;
+					case 'exist':
+						$message = "Username already taken.";
+					break;
+				}
+			}
+		?>
+			<div class="input-group form-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"><i class="fas fa-user"></i></span>
+				</div>
+				<input class="form-control" required type="text" name="fullname" <?php echo @$_POST['fullname']; ?> placeholder="Enter Fullname">
+				
+			</div>
+				<div class="input-group form-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"><i class="fas fa-user"></i></span>
+				</div>
+				<input class="form-control" required type="text" name="username" placeholder="Enter Username">
+				
+			</div>
+			<div class="input-group form-group">
+				<div class="input-group-prepend">
+					<span class="input-group-text"><i class="fas fa-key"></i></span>
+				</div>
+				<input class="form-control" required type="password" name="password" placeholder="Enter Password">
+			</div>
+			<div class="form-group">
+				<input type="submit" name="btnRegister" value="Register" class="btn float-right login_btn">
+			</div>
+		</form>
+	</div>
+	<div class="d-flex justify-content-center text-white"><?php echo @$message; ?></div>
+	<div class="card-footer">
+		<div class="d-flex justify-content-center links">
+			I have an account already !<a href="?page=login">Login!</a>
+		</div>
+		<div class="d-flex justify-content-center">
+			<a href="#">Forgot your password?</a>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+
+</body>
+<script src="vendor/jquery/bootstrap.min.js"></script> 
+<script src="vendor/jquery/interface.js"></script> 
+<script src="vendor/jquery/js/switcher.js"></script>
+<script src="vendor/jquery/bootstrap-slider.min.js"></script> 
+<script src="vendor/jquery/slick.min.js"></script> 
+<script src="vendor/jquery/owl.carousel.min.js"></script>
+</html>

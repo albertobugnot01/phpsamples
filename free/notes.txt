@@ -1,0 +1,31 @@
+Pre-final,midterm & final exam
+
+
+Register
+	- check if fields empty
+		- fullname
+		- username
+		- password
+	- add fields confirm password
+		- checkif password match
+Login
+	- functionality
+
+use http tracker 
+
+download bootstrap templates
+- frontend
+- backend(admin panel)
+
+- make system proposal 
+- individual
+
+system Title
+project description
+scope
+functionality
+modules
+
+plugins
+datatables
+jquery validation
